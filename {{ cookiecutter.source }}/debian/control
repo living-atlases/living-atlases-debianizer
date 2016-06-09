@@ -1,0 +1,45 @@
+Source: {{ cookiecutter.source }}
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: {{ cookiecutter.maintainer_name }} <{{ cookiecutter.maintainer_email }}>
+Build-Depends: debhelper (>= {{ cookiecutter.debhelper }}),
+               dh-python,
+               python-all,
+               python-setuptools,
+               python3-all,
+               python3-setuptools,
+               python3-sphinx
+Standards-Version: {{ cookiecutter.standards_version }}
+{% if cookiecutter.python2_minimum != "unsupported" %}X-Python-Version: >= {{ cookiecutter.python2_minimum }}{% endif %}
+{% if cookiecutter.python3_minimum != "unsupported" %}X-Python3-Version: >= {{ cookiecutter.python3_minimum }}{% endif %}
+Homepage: {{ cookiecutter.upstream_url }}
+Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/{{ cookiecutter.source }}.git
+Vcs-Git: https://anonscm.debian.org/python-modules/packages/{{ cookiecutter.source }}.git
+
+{% if cookiecutter.python2_minimum != "unsupported" %}
+Package: python-{{ cookiecutter.package }}
+Architecture: all
+Depends: ${misc:Depends},
+         ${python:Depends}
+Description: {{ cookiecutter.short_description }} (Python2 version)
+ .
+ This package contains the Python 2 version of the library.{% endif %}
+
+{% if cookiecutter.python3_minimum != "unsupported" %}
+Package: python3-{{ cookiecutter.package }}
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends}
+Description: {{ cookiecutter.short_description }} (Python3 version)
+ .
+ This package contains the Python 3 version of the library.{% endif %}
+
+Package: python-{{ cookiecutter.package }}-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends}
+Description: {{ cookiecutter.short_description }} (Documentation)
+ .
+ This package contains the documentation.

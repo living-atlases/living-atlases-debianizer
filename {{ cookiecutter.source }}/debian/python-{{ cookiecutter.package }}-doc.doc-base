@@ -1,0 +1,8 @@
+Document: python-{{ cookiecutter.package }}-doc
+Title: {{ cookiecutter.package }} Documentation
+Author: {{ cookiecutter.upstream_name }} <{{ cookiecutter.upstream_email }}>
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-{{ cookiecutter.package }}-doc/html/index.html
+Files: /usr/share/doc/python-{{ cookiecutter.package }}-doc/html/*.html

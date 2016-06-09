@@ -1,0 +1,14 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: {{ cookiecutter.source }}
+Upstream-Contact: {{ cookiecutter.upstream_name }} <{{ cookiecutter.upstream_email }}>
+Source: {{ cookiecutter.upstream_url }}
+
+Files: *
+Copyright: {{ cookiecutter.upstream_copyright }}
+License: {{ cookiecutter.license }}
+
+Files: debian/*
+Copyright: {% now 'local', '%Y' %}, {{ cookiecutter.maintainer_name }} <{{ cookiecutter.maintainer_email }}>
+License: {{ cookiecutter.license }}
+
+License: {{ cookiecutter.license }}
