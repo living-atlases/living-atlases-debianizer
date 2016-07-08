@@ -15,7 +15,7 @@ Standards-Version: {{ cookiecutter.standards_version }}
 {% if cookiecutter.python3_minimum != "unsupported" %}X-Python3-Version: >= {{ cookiecutter.python3_minimum }}{% endif %}
 Homepage: {{ cookiecutter.upstream_url }}
 Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/{{ cookiecutter.source }}.git
-Vcs-Git: https://anonscm.debian.org/python-modules/packages/{{ cookiecutter.source }}.git
+Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/{{ cookiecutter.source }}.git
 
 {% if cookiecutter.python2_minimum != "unsupported" %}
 Package: python-{{ cookiecutter.package }}
