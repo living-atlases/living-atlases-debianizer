@@ -68,6 +68,6 @@
   ],
   "debhelper": 9,
   "standards_version": "3.9.8",
-  "sphinx_root": "docs",
+  "sphinx_root": "",
   "_extensions": ["jinja2_time.TimeExtension"]
 }
