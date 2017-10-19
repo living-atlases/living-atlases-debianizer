@@ -22,22 +22,22 @@ Package: python-{{ cookiecutter.package }}
 Architecture: all
 Depends: ${misc:Depends},
          ${python:Depends}
-{% if cookiecutter.sphinx_root != "" %}Suggests: python-{{ cookiecutter.package }}-doc{$ endif %}
+{% if cookiecutter.sphinx_root != "" %}Suggests: python-{{ cookiecutter.package }}-doc{% endif %}
 Description: {{ cookiecutter.short_description }} (Python2 version)
  .
- This package contains the Python 2 version of the library.{% endif %}
+ This package contains the Python 2 version of the library.
 
-{% if cookiecutter.python3_minimum != "unsupported" %}
+{% endif %}{% if cookiecutter.python3_minimum != "unsupported" %}
 Package: python3-{{ cookiecutter.package }}
 Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends}
-{% if cookiecutter.sphinx_root != "" %}Suggests: python-{{ cookiecutter.package }}-doc{$ endif %}
+{% if cookiecutter.sphinx_root != "" %}Suggests: python-{{ cookiecutter.package }}-doc{% endif %}
 Description: {{ cookiecutter.short_description }} (Python3 version)
  .
- This package contains the Python 3 version of the library.{% endif %}
+ This package contains the Python 3 version of the library.
 
-{% if cookiecutter.sphinx_root != "" %}
+{% endif %}{% if cookiecutter.sphinx_root != "" %}
 Package: python-{{ cookiecutter.package }}-doc
 Section: doc
 Architecture: all

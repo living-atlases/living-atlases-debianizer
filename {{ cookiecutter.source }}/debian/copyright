@@ -1,4 +1,4 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: {{ cookiecutter.source }}
 Upstream-Contact: {{ cookiecutter.upstream_name }} <{{ cookiecutter.upstream_email }}>
 Source: {{ cookiecutter.upstream_url }}
