@@ -6,8 +6,12 @@
 export PYBUILD_NAME={{ cookiecutter.package }}
 
 %:
-	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
+	dh $@ --with {% if cookiecutter.python2 != "" %}python2{% endif %},{% if cookiecutter.python3 %}python3{% endif %},{% if cookiecutter.sphinx_root != ""%}sphinxdoc{% endif %} --buildsystem=pybuild
 
-override_dh_auto_build:
-	dh_auto_build
-	PYTHONPATH=. sphinx-build -b html -d {{ cookiecutter.sphinx_root }}/.build/.doctrees -N {{ cookiecutter.sphinx_root }} {{ cookiecutter.sphinx_root }}/.build/html
+{%- if cookiecutter.sphinx_root != "" %}
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=. sphinx-build -b html -d {{ cookiecutter.sphinx_root }}/.build/.doctrees -N {{ cookiecutter.sphinx_root }} $(CURDIR)/debian/python-{{ cookiecutter.package }}-doc/usr/share/doc/python-{{ cookiecutter.package }}-doc/html
+	dh_sphinxdoc
+endif
+{%- endif %}
