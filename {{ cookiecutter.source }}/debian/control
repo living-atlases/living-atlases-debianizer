@@ -24,7 +24,7 @@ Depends: ${misc:Depends}, default-jre-headless | java8-runtime-headless
 {%- if cookiecutter.webserver != "no" %}
 Suggests: apache2 | nginx
 {%- endif %}
-Description: The {{ cookiecutter.short_description }} application from ALA
+Description: The {{ cookiecutter.short_description }} application
  .
  This package contains the {{cookiecutter.package}} package from
- Atlas of Living Australia {{cookiecutter.short_description}}.
+ Atlas of Living Australia.
