@@ -123,14 +123,9 @@ You will be asked for these fields:
 
 TODO
 ---------
-
-.. include:: TODO.rst
-
-
-Changelog
----------
-
-.. include:: CHANGELOG.rst
+- [ ] File perms
+- [ ] tomcat properly context configuration
+- [ ] db users/db
 
 
 Not Exactly What You Want?
@@ -138,11 +133,11 @@ Not Exactly What You Want?
 
 If you have criticism or suggestions please open up an Issue or Pull Request.
 
+This generator is a fork of the project `cookiecutter-debian-python-module`_. So thanks.
+
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`Jinja2 Time`: https://github.com/hackebrot/jinja2-time
 .. _`Debian`: https://www.debian.org/
 .. _`Debian BTS`: https://www.debian.org/Bugs/
 .. _`DEP-5`: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-
-
-This generator is a fork of the project [cookiecutter-debian-python-module](https://github.com/fladi/cookiecutter-debian-python-module). So thanks.
+.. _`cookiecutter-debian-python-module`: https://github.com/fladi/cookiecutter-debian-python-module
