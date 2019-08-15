@@ -27,7 +27,7 @@ Usage and options
 
 First generate your project::
 
-cookiecutter gh:vjrj/living-atlases-debianizer
+cookiecutter gh:living-atlases/living-atlases-debianizer
 
 You will be asked for these fields:
 
@@ -120,6 +120,9 @@ You will be asked for these fields:
             "4.2.1"
       - Debian Standards-Version.
 
+During development of this templating system you can also replay without ask and overriding with::
+
+  cookiecutter --replay -f THIS_DIRECTORY
 
 TODO
 ---------
