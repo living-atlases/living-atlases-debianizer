@@ -1,23 +1,19 @@
-=================================
-cookiecutter-debian-python-module
-=================================
+=========================
+living-atlases-debianizer
+=========================
 
-`Cookiecutter`_ template for a `Debian Python Module`_ package.
+`Cookiecutter`_ template for genetate `Debian`_ Living Atlases software packages.
 
 
 Features
 --------
 
-This is an almost "all inclusive" sort of template.
-
-* Automatic setup of the whole "debian/" subdirectory.
-* Support for Python2 and Python3 packages.
-* Sphinxdoc integration with a separate documentation package.
+* Automatic setup of initial "debian/" subdirectory.
 
 Requirements
 ------------
 
-To create a package directory structure from this template some packages are required:
+To create a debian package directory structure from this template some packages are required:
 
 * `Cookiecutter`_ - just for creating the project
 * `Jinja2 Time`_ - for displaying the current date and time in templates
@@ -31,7 +27,7 @@ Usage and options
 
 First generate your project::
 
-  cookiecutter gh:fladi/cookiecutter-debian-python-module
+cookiecutter gh:vjrj/living-atlases-debianizer
 
 You will be asked for these fields:
 
@@ -45,7 +41,7 @@ You will be asked for these fields:
     * - ``maintainer_name``
       - .. code:: python
 
-            "Michael Fladischer"
+            "John Doe"
       - Debian maintainer of this package.
 
         Can be set in your ``~/.cookiecutterrc`` config file.
@@ -53,33 +49,27 @@ You will be asked for these fields:
     * - ``email``
       - .. code:: python
 
-            "fladi@debian.org"
+            "john@example.org"
       - Contact email of the maintainer.
 
         Can be set in your ``~/.cookiecutterrc`` config file.
 
-    * - ``bug``
-      - .. code:: python
-
-            ""
-      - ITP bug number from `Debian BTS`_
-
     * - ``package``
       - .. code:: python
 
-            "module"
-      - The name of the upstream package as seen on `PyPI`_.
+            "ala-collectory"
+      - The name of the upstream ALA module.
 
     * - ``source``
       - .. code:: python
 
-            "python-module"
+            "ala-collectory"
       - The name of the Debian source package.
 
     * - ``short_description``
       - .. code:: python
 
-            "Some useful Python module"
+            "Some useful description of the module"
       - Short description for the Debian packages.
 
     * - ``version``
@@ -103,50 +93,38 @@ You will be asked for these fields:
     * - ``upstream_url``
       - .. code:: python
 
-            "https://pypi.python.org/pypi/module"
+            "https://github.com/AtlasOfLivingAustralia/ala-collectory"
       - URL of upstream website.
 
-    * - ``upstrea_copyright``
+    * - ``upstream_copyright``
       - .. code:: python
 
-            "2016, Some Name <someone@example.com>"
+            "2019, ALA <someone@example.com>"
       - Copyright information of upstream project.
 
     * - ``license``
       - .. code:: python
 
-            "public domain"
+            "MPL"
       - Upstream license (select from a list of `DEP-5`_ licenses).
-
-    * - ``python2_minimum``
-      - .. code:: python
-
-            "2.5"
-      - Minimum supported Python2 version (select "unsupported" to disable Python2 support).
-
-    * - ``python3_minimum``
-      - .. code:: python
-
-            "3.0"
-      - Minimum supported Python3 version (select "unsupported" to disable Python3 support).
 
     * - ``debhelper``
       - .. code:: python
 
-            "9"
+            "11"
       - Debhelper compatibility level.
 
     * - ``standards_version``
       - .. code:: python
 
-            "3.9.8"
+            "4.2.1"
       - Debian Standards-Version.
 
-    * - ``sphinx_root``
-      - .. code:: python
 
-            "docs"
-      - Root directory of sphinx buildable documentation.
+TODO
+---------
+
+.. include:: TODO.rst
 
 
 Changelog
@@ -162,9 +140,9 @@ If you have criticism or suggestions please open up an Issue or Pull Request.
 
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`Jinja2 Time`: https://github.com/hackebrot/jinja2-time
-.. _`Sphinx`: http://sphinx-doc.org/
-.. _`PyPI`: https://pypi.python.org/
 .. _`Debian`: https://www.debian.org/
 .. _`Debian BTS`: https://www.debian.org/Bugs/
-.. _`Debian Python Module`: https://wiki.debian.org/Teams/PythonModulesTeam
 .. _`DEP-5`: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+
+This generator is a fork of the project [cookiecutter-debian-python-module](https://github.com/fladi/cookiecutter-debian-python-module). So thanks.

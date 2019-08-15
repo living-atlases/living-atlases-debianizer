@@ -1,5 +1,5 @@
 {{ cookiecutter.source }} ({{cookiecutter.version }}-1) unstable; urgency=low
 
-  * Initial release (Closes: #{{ cookiecutter.bug }})
+  * Initial release
 
  -- {{ cookiecutter.maintainer_name }} <{{ cookiecutter.maintainer_email }}>  {% now 'local', '%a, %d %b %Y %H:%M:%S %z' %}

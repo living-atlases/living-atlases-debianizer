@@ -1,0 +1,3 @@
+/data
+/data/{{ cookiecutter.package }}
+/data/{{ cookiecutter.package }}/config

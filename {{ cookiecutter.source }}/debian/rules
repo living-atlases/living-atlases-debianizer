@@ -1,17 +1,13 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+# https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#rules
+# See also:
+#
+# man debhelper
+# man dh
 
-export PYBUILD_NAME={{ cookiecutter.package }}
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
 
 %:
-	dh $@ --with {% if cookiecutter.python2 != "" %}python2{% endif %},{% if cookiecutter.python3 %}python3{% endif %},{% if cookiecutter.sphinx_root != ""%}sphinxdoc{% endif %} --buildsystem=pybuild
-
-{%- if cookiecutter.sphinx_root != "" %}
-override_dh_sphinxdoc:
-ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
-	PYTHONPATH=. sphinx-build -b html -d {{ cookiecutter.sphinx_root }}/.build/.doctrees -N {{ cookiecutter.sphinx_root }} $(CURDIR)/debian/python-{{ cookiecutter.package }}-doc/usr/share/doc/python-{{ cookiecutter.package }}-doc/html
-	dh_sphinxdoc
-endif
-{%- endif %}
+	dh $@

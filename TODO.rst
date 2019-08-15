@@ -1,0 +1,3 @@
+- File perms
+- tomcat properly context configuration
+- db users/db
