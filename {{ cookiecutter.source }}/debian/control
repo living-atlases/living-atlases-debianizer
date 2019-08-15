@@ -16,7 +16,7 @@ Vcs-Git: {{ cookiecutter.upstream_url }}.git
 Package: {{ cookiecutter.package }}
 Architecture: all
 Depends: ${misc:Depends}, default-jre-headless | java8-runtime-headless
-{%- if cookiecutter.tomcat != "no" %}, tomcat7, libtcnative{%- endif %}
+{%- if cookiecutter.tomcat != "no" %}, tomcat7, libtcnative-1{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, mysql-server-5.7, python-mysqldb{%- endif %}
 {%- if cookiecutter.postgresql_version != "no" %}, libpq-dev, python-psycopg2, postgresql-{{postgresql_version}}, postgresql-contrib-{{postgresql_version}}{%- endif %}
 {%- if cookiecutter.postgis_version != "no" %}, postgresql-{{postgresql_version}}-postgis-{{postgis_version}}, postgresql-{{postgresql_version}}-postgis-{{postgis_version}}-scripts, gdal-bin{%- endif %}
