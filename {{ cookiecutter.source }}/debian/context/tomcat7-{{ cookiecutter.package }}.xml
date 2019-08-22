@@ -1,0 +1,1 @@
+<Context path="/{{ cookiecutter.package }}" docBase="/usr/share/tomcat7-{{ cookiecutter.package }}/{{ cookiecutter.package }}" allowLinking="true"/>

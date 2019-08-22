@@ -1,4 +1,5 @@
-# https://www.debian.org/doc/manuals/maint-guide/dother.en.html#install
 {%- if cookiecutter.tomcat != "no" %}
-target/{{ cookiecutter.package }}-{{ cookiecutter.version }}.war usr/share/tomcat7/webapps-{{ cookiecutter.package }}/{{ cookiecutter.package }}.war
+target/{{ cookiecutter.package }}.war usr/share/tomcat7-{{ cookiecutter.package }}/
+debian/context/tomcat7-{{ cookiecutter.package }}.xml /etc/tomcat7/Catalina/localhost/
+debian/data/{{ cookiecutter.package }}/config/{{ cookiecutter.package }}-config.properties /data/{{ cookiecutter.package }}/config
 {%- endif %}
