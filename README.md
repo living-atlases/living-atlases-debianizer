@@ -2,6 +2,7 @@
 * [Features](#features)
 * [Requirements](#requirements)
 * [Usage and options](#usage-and-options)
+* [Sample of usage](#sample-of-usage)
 * [TODO](#todo)
 * [Credits](#credits)
 
@@ -67,6 +68,8 @@ cookiecutter --replay -f THIS_DIRECTORY
 ```
 
 `-f` forces to overwrite the generated `/debian` directory and contents.
+
+## Sample of usage
 
 Sample output:
 
