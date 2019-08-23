@@ -25,9 +25,13 @@ To get quickly started on a new `Debian`_ system, just run this in your shell or
 Usage and options
 -----------------
 
-First generate your project::
+Clone the ala-repo you want to "debianize", for instance::
 
-cookiecutter gh:living-atlases/living-atlases-debianizer
+  git clone git@github.com:AtlasOfLivingAustralia/ala-collectory.git
+
+without moving to "ala-collectory" directory generate your debian directory for your module::
+
+  cookiecutter gh:living-atlases/living-atlases-debianizer
 
 You will be asked for these fields:
 
@@ -123,6 +127,52 @@ You will be asked for these fields:
 During development of this templating system you can also replay without ask and overriding with::
 
   cookiecutter --replay -f THIS_DIRECTORY
+
+Sample output:
+
+.. code:: bash
+
+  $ cookiecutter gh:living-atlases/living-atlases-debianizer
+
+  maintainer_name [ALA Development Team]:
+  maintainer_email [support@ala.org.au]:
+  package [ala-collectory]:
+  source [ala-collectory]:
+  short_description [ala-collectory ALA module]:
+  version [1.6.2]:
+  upstream_name [ALA Development Team]:
+  upstream_email [support@ala.org.au]:
+  upstream_url [https://github.com/AtlasOfLivingAustralia/ala-collectory]:
+  upstream_copyright [2019, ALA Development Team <support@ala.org.au>]:
+  Select license:
+  1 - MPL
+  2 - public-domain
+  3 - Apache-1
+  4 - Apache-2
+  (..)
+  Choose from 1, 2, 3, 4 [1]: 1
+  tomcat [yes]:
+  grails [yes]:
+  mysql [yes]:
+  postgresql_version [no]:
+  postgis_version [no]:
+  mongodb [no]:
+  webserver [yes]:
+  debhelper [11]:
+  standards_version [4.2.1]:
+
+$ cd ala-collectory
+$ git status
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        debian/
+
+nothing added to commit but untracked files present (use "git add" to track)
 
 TODO
 ---------
