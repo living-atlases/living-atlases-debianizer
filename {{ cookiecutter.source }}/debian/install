@@ -1,5 +1,10 @@
-{%- if cookiecutter.tomcat != "no" %}
+{%- if cookiecutter.tomcat != "no" -%}
 target/{{ cookiecutter.package }}.war usr/share/tomcat7-{{ cookiecutter.package }}/
 debian/context/tomcat7-{{ cookiecutter.package }}.xml /etc/tomcat7/Catalina/localhost/
 debian/data/{{ cookiecutter.package }}/config/{{ cookiecutter.package }}-config.properties /data/{{ cookiecutter.package }}/config
+{%- endif %}
+{%- if cookiecutter.mysql != "no" %}
+# Just an example of db install and update via debian
+mysql.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/install/mysql
+mysql-upgrade_2.1.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/upgrade/mysql/2.1
 {%- endif %}
