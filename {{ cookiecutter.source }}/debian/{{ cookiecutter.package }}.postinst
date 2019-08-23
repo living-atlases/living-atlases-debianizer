@@ -1,4 +1,16 @@
 #!/bin/sh
+
+#######################################################
+#
+# Add here the commands to be excuted after the package
+# has been installed
+#
+
+#Example: create some symbolic links
+#
+#chown -R ${user}:${group} /opt/${appName}-${appVersion}
+#ln -s /opt/${appName}-${appVersion} /opt/${appName}
+
 set -e
 
 . /usr/share/debconf/confmodule
@@ -16,4 +28,4 @@ case "$1" in
     ;;
 esac
 
-#DEBHELPER#
+echo {{ cookiecutter.package }} installed
