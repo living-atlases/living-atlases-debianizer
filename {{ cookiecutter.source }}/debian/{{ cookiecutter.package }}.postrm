@@ -6,4 +6,22 @@
 # has been removed
 #
 
+if [ -f /usr/share/debconf/confmodule ]; then
+    . /usr/share/debconf/confmodule
+fi
+
+{%- if cookiecutter.mysql != "no" %}
+if [ -f /usr/share/dbconfig-common/dpkg/postrm.mysql ]; then
+    . /usr/share/dbconfig-common/dpkg/postrm.mysql
+    dbc_go {{ cookiecutter.package }} "$@"
+fi
+{%- endif %}
+
+{%- if cookiecutter.postgresql_version != "no" %}
+if [ -f /usr/share/dbconfig-common/dpkg/postrm.pgsql  ]; then
+    . /usr/share/dbconfig-common/dpkg/postrm.pgsql
+fi
+dbc_go {{ cookiecutter.package }} "$@"
+{%- endif %}
+
 echo {{ cookiecutter.package }} removed.

@@ -13,4 +13,16 @@
 #rm -rf /opt/${appName}/logs/*
 #
 
+. /usr/share/debconf/confmodule
+
+{%- if cookiecutter.mysql != "no" %}
+. /usr/share/dbconfig-common/dpkg/prerm.mysql
+dbc_go {{ cookiecutter.package }} "$@"
+{%- endif %}
+
+{%- if cookiecutter.postgresql_version != "no" %}
+. /usr/share/dbconfig-common/dpkg/prerm.pgsql
+dbc_go {{ cookiecutter.package }} "$@"
+{%- endif %}
+
 echo Removing {{ cookiecutter.package }}

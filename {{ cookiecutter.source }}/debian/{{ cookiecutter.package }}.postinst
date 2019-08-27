@@ -28,4 +28,23 @@ case "$1" in
     ;;
 esac
 
+{%- if cookiecutter.mysql != "no" %}
+. /usr/share/dbconfig-common/dpkg/postinst.mysql
+
+# you can set the default database encoding to something else
+dbc_mysql_createdb_encoding="UTF8"
+dbc_go {{ cookiecutter.package }} "$@"
+
+{%- endif %}
+
+{%- if cookiecutter.postgresql_version != "no" %}
+. /usr/share/dbconfig-common/dpkg/postinst.pgsql
+
+# you can set the default database encoding to something else
+dbc_pgsql_createdb_encoding="UTF8"
+dbc_go {{ cookiecutter.package }} "$@"
+{%- endif %}
+
+
+
 echo {{ cookiecutter.package }} installed
