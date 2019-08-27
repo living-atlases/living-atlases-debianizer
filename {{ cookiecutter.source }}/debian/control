@@ -15,7 +15,7 @@ Vcs-Git: {{ cookiecutter.upstream_url }}.git
 
 Package: {{ cookiecutter.package }}
 Architecture: all
-Depends: ${misc:Depends}, java8-sdk, ca-certificates
+Depends: ${misc:Depends}, openjdk-8-jdk, ca-certificates
 {%- if cookiecutter.tomcat != "no" %}, tomcat7, libtcnative-1{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, mysql-server-5.7, python-mysqldb{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, dbconfig-mysql | dbconfig-no-thanks{%- endif %}

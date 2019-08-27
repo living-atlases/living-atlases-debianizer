@@ -9,6 +9,11 @@
 {%- if cookiecutter.mysql != "no" %}
 if [ -f /usr/share/dbconfig-common/dpkg/config.mysql ]; then
     . /usr/share/dbconfig-common/dpkg/config.mysql
+   # If you want to use a different dbname that {{ cookiecutter.package }} uncomment this
+   # dbc_dbuser=collectory
+   # dbc_dbname=collectory
+   # dbc_mysql_createdb_encoding="UTF8"
+
     dbc_go {{ cookiecutter.package }} "$@"
 fi
 {%- endif %}
