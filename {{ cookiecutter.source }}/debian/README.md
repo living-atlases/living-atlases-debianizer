@@ -9,6 +9,10 @@ in the parent of this directory. This will generate the deb file in the parent d
 
 You can increase changelog version and comments with `dch` utility, like with `dch -i` that increase minor version.
 
+## Looking for inspiration?
+
+You can use [tomcat7-examples package](https://salsa.debian.org/java-team/tomcat7/tree/master/debian) for inspiration of tomcat7 packages. Also `dbconfig-common` package have some samples in `/usr/share/doc/dbconfig-common/examples/` for mysql dep packages and postgresql.
+
 ## Testing
 
 You can test the generated package without installit with `piuparts` like:
@@ -38,3 +42,5 @@ EOF
 export DEBCONF_FRONTEND=noninteractive
 apt-get install -yq --force-yes {{ cookiecutter.package }}
 ```
+
+Also you can install `dbconfig-no-thanks` to avoid db questions.
