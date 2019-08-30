@@ -19,9 +19,9 @@ Depends: ${misc:Depends}, openjdk-8-jdk, ca-certificates
 {%- if cookiecutter.tomcat != "no" %}, tomcat7, libtcnative-1{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, mysql-server-5.7, python-mysqldb{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, dbconfig-mysql | dbconfig-no-thanks{%- endif %}
-{%- if cookiecutter.postgresql_version != "no" %}, libpq-dev, python-psycopg2, postgresql-{{postgresql_version}}, postgresql-contrib-{{postgresql_version}}{%- endif %}
+{%- if cookiecutter.postgresql_version != "no" %}, libpq-dev, python-psycopg2, postgresql-{{ cookiecutter.postgresql_version }}, postgresql-contrib-{{ cookiecutter.postgresql_version }}{%- endif %}
 {%- if cookiecutter.postgresql_version != "no" %}, dbconfig-pgsql | dbconfig-no-thanks{%- endif %}
-{%- if cookiecutter.postgis_version != "no" %}, postgresql-{{postgresql_version}}-postgis-{{postgis_version}}, postgresql-{{postgresql_version}}-postgis-{{postgis_version}}-scripts, gdal-bin{%- endif %}
+{%- if cookiecutter.postgis_version != "no" %}, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }}, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }}-scripts, gdal-bin{%- endif %}
 {%- if cookiecutter.mongodb != "no" %}, mongodb-org-shell, mongodb-org-server, python-pip{%- endif %}
 {%- if cookiecutter.webserver != "no" %}
 Suggests: apache2 | nginx
