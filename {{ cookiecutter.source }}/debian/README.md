@@ -19,6 +19,14 @@ debian/files
 debian/{{ cookiecutter.package }}
 ```
 
+## Using systemd?
+
+Just create here your systemad service like
+debian/{{ cookiecutter.package }}.service
+debian/{{ cookiecutter.package }}.conf
+
+see ala-images debian package for details
+
 ## Looking for inspiration?
 
 You can see [tomcat7-examples package source](https://salsa.debian.org/java-team/tomcat7/tree/master/debian) for inspiration of tomcat7 packages and also about how to create multiple debian packages from a same source repository.

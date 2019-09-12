@@ -42,7 +42,7 @@ You will be asked for these fields:
 - `maintainer_name`: Debian maintainer of this package. Can be set in your `~/.cookiecutterrc` config file.
 - `email`: Contact email of the maintainer. Can be set in your `~/.cookiecutterrc` config file.
 - `package`: The name of the upstream ALA module.
-- `source`: The name of the Debian source package.
+- `source`: The name of the child directory where you cloned the ALA module.
 - `short_description`: Some useful description for this Debian packages.
 - `version`: Upstream version to be initially packaged.
 - `upstream_name`: Name of upstream author or primary contact.

@@ -1,10 +1,16 @@
+# https://www.debian.org/doc/manuals/maint-guide/dother.en.html#install
+debian/data/{{ cookiecutter.package }}/config/{{ cookiecutter.package }}-config.template data/{{ cookiecutter.package }}/config
 {%- if cookiecutter.tomcat != "no" -%}
 target/{{ cookiecutter.package }}.war usr/share/{{ cookiecutter.package }}/
-debian/context/{{ cookiecutter.package }}.xml /etc/tomcat7/Catalina/localhost/
-debian/data/{{ cookiecutter.package }}/config/{{ cookiecutter.package }}-config.template /data/{{ cookiecutter.package }}/config
+debian/context/{{ cookiecutter.package }}.xml etc/tomcat7/Catalina/localhost/
 {%- endif %}
 {%- if cookiecutter.mysql != "no" %}
 # Just an example of db install and update via debian
 mysql.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/install/mysql
 mysql-upgrade_2.1.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/upgrade/mysql/2.1
+{%- endif %}
+{%- if cookiecutter.postgresql_version != "no" %}
+# Just an example of db install and update via debian
+psql.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/install/pgsql
+psql-upgrade_2.1.sql usr/share/dbconfig-common/data/{{ cookiecutter.package }}/upgrade/pgsql/2.1
 {%- endif %}

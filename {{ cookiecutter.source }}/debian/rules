@@ -14,12 +14,13 @@
 
 build:
 #	install don't allow to rename files (like wars), so we copy here the file we want to install with the package
-	cp target/{{ cookiecutter.package }}-{{ cookiecutter.version }}.war target/{{ cookiecutter.package }}.war
+# $(CURDIR) is the repo directory
+	cp $(CURDIR)/target/{{ cookiecutter.package }}-{{ cookiecutter.version }}.war $(CURDIR)/target/{{ cookiecutter.package }}.war
 
 override_dh_fixperms:
 	dh_fixperms
 #	If we need to set some special perms to a file
-#	chmod 4755 debian/foo/usr/bin/foo
+#	chmod 4755 debian/ala-foo/opt/atlas/ala-foo/foo.jar
 #	Also we use postinstall for this
 
 override_dh_install:
