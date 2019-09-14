@@ -11,6 +11,9 @@
 
 %:
 	dh $@
+{%- if cookiecutter.systemd != "no" %}i
+--with-systemd
+{%- endif %}
 
 build:
 #	install don't allow to rename files (like wars), so we copy here the file we want to install with the package

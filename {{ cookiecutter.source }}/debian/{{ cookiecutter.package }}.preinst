@@ -22,9 +22,12 @@
 #          --ingroup ${group} \
 #          --no-create-home \
 #          --home /nonexistent \
-#          --gecos "${user}" \
+#          --system \
+#          --quiet \
 #          --shell /bin/false \
 #          ${user} >/dev/null
 #fi
+
+#DEBHELPER#
 
 echo Installing {{ cookiecutter.package }}

@@ -51,6 +51,7 @@
   "tomcat": "yes",
   "grails": "yes",
   "mysql": "yes",
+  "systemd": "no",
   "postgresql_version": "no",
   "postgis_version": "no",
   "mongodb": "no",

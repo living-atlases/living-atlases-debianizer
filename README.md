@@ -53,6 +53,7 @@ You will be asked for these fields:
 - `tomcat`: yes/no.
 - `grails`: yes/no.
 - `mysql`: yes/no.
+- `systemd`: yes/no. If this module uses systemd (like CAS or image-service)
 - `postgresql_version`: no or version.
 - `postgis_version`: no or version.
 - `mongodb`: yes/no.
