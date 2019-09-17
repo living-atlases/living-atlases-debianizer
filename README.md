@@ -35,7 +35,16 @@ git clone git@github.com:AtlasOfLivingAustralia/ala-collectory.git
 ```
 without moving to `ala-collectory` directory generate your `debian` directory for your module:
 ```bash
-cookiecutter gh:living-atlases/living-atlases-debianizer
+cookiecutter -f gh:living-atlases/living-atlases-debianizer
+```
+or if you want to repeat with the same answers:
+
+```bash
+cookiecutter -f --replay gh:living-atlases/living-atlases-debianizer
+```
+
+```bash
+cookiecutter -f gh:living-atlases/living-atlases-debianizer
 ```
 You will be asked for these fields:
 
@@ -58,6 +67,7 @@ You will be asked for these fields:
 - `postgis_version`: no or version.
 - `mongodb`: yes/no.
 - `webserver`: yes/no.
+- `adduser`: no or username and groupname to add (for instance `cas` or similar).
 - `debhelper`: Debhelper compatibility level.
 - `standards_version`: Debian Standards-Version.
 
@@ -68,7 +78,7 @@ ask and overwritting the configurated files with:
 cookiecutter --replay -f THIS_DIRECTORY
 ```
 
-`-f` forces to overwrite the generated `/debian` directory and contents.
+`-f` forces to overwrite the generated `ala-repo/debian` directory and contents.
 
 ## Sample of usage
 
