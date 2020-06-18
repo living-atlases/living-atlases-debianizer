@@ -47,7 +47,7 @@ Also `dbconfig-common` package have some samples in `/usr/share/doc/dbconfig-com
 You can test the generated package without install it with `piuparts` like:
 
 ```bash
-sudo piuparts -D ubuntu -d xenial -d bionic ../ala-collectory_1.6.2-1_all.deb
+sudo piuparts -D ubuntu -d xenial -d bionic ../{{ cookiecutter.package }}_{{ cookiecutter.version }}_all.deb
 ```
 in this way you can also test it in different releases.
 
