@@ -1,5 +1,14 @@
 ## Intro
 
+## Prerequisites
+
+```
+sudo apt install debhelper
+sudo apt install devscripts
+```
+
+## Build
+
 You can generate a non-signed debian package via:
 
 ```bash
