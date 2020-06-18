@@ -82,7 +82,13 @@ cookiecutter --replay -f THIS_DIRECTORY
 
 ## Sample of usage
 
-Sample output:
+Imagine that we clone some ALA repo:
+
+``` {.bash}
+$ git clone https://github.com/AtlasOfLivingAustralia/ala-collectory.git
+```
+
+so we are in the parent of `ala-collectory` directory. Then we can run:
 
 ``` {.bash}
 $ cookiecutter gh:living-atlases/living-atlases-debianizer
