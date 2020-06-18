@@ -17,17 +17,16 @@ Package: {{ cookiecutter.package }}
 Architecture: all
 Depends: ${misc:Depends}, openjdk-8-jdk, ca-certificates
 {%- if cookiecutter.tomcat != "no" %}, tomcat7, libtcnative-1{%- endif %}
-{%- if cookiecutter.mysql != "no" %}, mysql-server-5.7, python-mysqldb{%- endif %}
+{%- if cookiecutter.mysql != "no" %}, mysql-server-5.7 | dbconfig-no-thanks, python-mysqldb | dbconfig-no-thanks{%- endif %}
 {%- if cookiecutter.mysql != "no" %}, dbconfig-mysql | dbconfig-no-thanks{%- endif %}
-{%- if cookiecutter.postgresql_version != "no" %}, libpq-dev, python-psycopg2, postgresql-{{ cookiecutter.postgresql_version }}, postgresql-contrib-{{ cookiecutter.postgresql_version }}{%- endif %}
+{%- if cookiecutter.postgresql_version != "no" %}, libpq-dev | dbconfig-no-thanks, python-psycopg2 | dbconfig-no-thanks, postgresql-{{ cookiecutter.postgresql_version }} | dbconfig-no-thanks, postgresql-contrib-{{ cookiecutter.postgresql_version }} | dbconfig-no-thanks{%- endif %}
 {%- if cookiecutter.postgresql_version != "no" %}, dbconfig-pgsql | dbconfig-no-thanks{%- endif %}
-{%- if cookiecutter.postgresql_version != "no" %}, python-pycurl, libpq-dev{%- endif %}
-{%- if cookiecutter.postgis_version != "no" %}, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }}, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }}-scripts, gdal-bin{%- endif %}
-{%- if cookiecutter.postgresql_version != "no" %}, python-pycurl, libpq-dev{%- endif %}
+{%- if cookiecutter.postgresql_version != "no" %}, python-pycurl | dbconfig-no-thanks, libpq-dev | dbconfig-no-thanks{%- endif %}
+{%- if cookiecutter.postgis_version != "no" %}, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }} | dbconfig-no-thanks, postgresql-{{ cookiecutter.postgresql_version }}-postgis-{{ cookiecutter.postgis_version }}-scripts | dbconfig-no-thanks, gdal-bin | dbconfig-no-thanks{%- endif %}
+{%- if cookiecutter.postgresql_version != "no" %}, python-pycurl | dbconfig-no-thanks, libpq-dev | dbconfig-no-thanks{%- endif %}
+Suggests: cowsay
+{%- if cookiecutter.webserver != "no" %}, apache2 | nginx {%- endif %}
 {%- if cookiecutter.mongodb != "no" %}, mongodb-org-shell, mongodb-org-server, python-pip{%- endif %}
-{%- if cookiecutter.webserver != "no" %}
-Suggests: apache2 | nginx
-{%- endif %}
 Description: The {{ cookiecutter.short_description }} application
  This package contains the {{cookiecutter.package}} package from
  Atlas of Living Australia, Free and open source IT infrastructure
