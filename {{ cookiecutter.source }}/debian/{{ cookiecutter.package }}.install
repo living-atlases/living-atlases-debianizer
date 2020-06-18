@@ -1,7 +1,7 @@
 # https://www.debian.org/doc/manuals/maint-guide/dother.en.html#install
 debian/data/{{ cookiecutter.package }}/config/{{ cookiecutter.package }}-config.template data/{{ cookiecutter.package }}/config
-{%- if cookiecutter.tomcat != "no" -%}
 target/{{ cookiecutter.package }}.war usr/share/{{ cookiecutter.package }}/
+{%- if cookiecutter.tomcat != "no" -%}
 debian/context/{{ cookiecutter.package }}.xml etc/tomcat7/Catalina/localhost/
 {%- endif %}
 {%- if cookiecutter.mysql != "no" %}
