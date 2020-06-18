@@ -63,11 +63,11 @@ You will be asked for these fields:
 - `grails`: yes/no.
 - `mysql`: yes/no.
 - `systemd`: yes/no. If this module uses systemd (like CAS or image-service)
-- `postgresql_version`: no or version.
-- `postgis_version`: no or version.
+- `postgresql_version`: no or **version**.
+- `postgis_version`: no or **version**.
 - `mongodb`: yes/no.
 - `webserver`: yes/no.
-- `adduser`: no or username and groupname to add (for instance `cas` or similar).
+- `adduser`: no or **username** and groupname to add (for instance `cas` or similar).
 - `debhelper`: Debhelper compatibility level.
 - `standards_version`: Debian Standards-Version.
 
